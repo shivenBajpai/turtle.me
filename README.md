@@ -54,6 +54,6 @@ This codebase holds the WIP code for the website:)
 
   ## STAGE III
 
-  Auth
+  Auth, User comments etc, unplanned.
     
 </details>
