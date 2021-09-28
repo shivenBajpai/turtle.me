@@ -21,9 +21,8 @@ This codebase holds the WIP code for the website:)
 
   /newsletter => newsletter signups (optouts will be in newsletters themselves)
 
-  /tutles => Easter egg?
+  /tutles => Easter egg maybe
   Simple 404 page
-
 
   <b>API Routes- /techtutle will be the root API route </b>
 
@@ -52,9 +51,9 @@ This codebase holds the WIP code for the website:)
 
   /sheetmusiclist() => List of IDs of Sheet Music.
   /sheetmusic(Array of IDs) => Sheet Music data 
-    
-    ```javascript
-    console.log("I'm a code block!");
-    ```
+
+  ## STAGE III
+
+  Auth
     
 </details>
