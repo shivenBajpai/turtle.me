@@ -1,0 +1,19 @@
+{
+  "name": "turtle.me",
+  "version": "1.0.0",
+  "description": "Backend for www.turtle.me",
+  "main": "app.js",
+  "scripts": {
+    "test": "cypress open",
+    "dev": "npx nodemon"
+  },
+  "author": "Shiven Bajpai",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.5.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.13"
+  }
+}
