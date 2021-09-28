@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "cypress open",
-    "dev": "npx nodemon"
+    "dev": "npx nodemon",
+    "pretty": "prettier --write \"./**/*.{js,json}\""
   },
   "author": "Shiven Bajpai",
   "license": "ISC",
