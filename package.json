@@ -8,15 +8,18 @@
     "dev": "npx nodemon",
     "pretty": "prettier --write \"./**/*.{js,json}\""
   },
-  "author": "Shiven Bajpai",
+  "author": "Shiven Bajpai <shiven.bajpai@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@moebius/http-graceful-shutdown": "^1.1.0",
+    "@prisma/client": "^3.1.1",
     "cypress": "^8.5.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "node-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "prisma": "^3.1.1"
   }
 }
