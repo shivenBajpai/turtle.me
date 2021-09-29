@@ -1,15 +1,21 @@
-//Loading Environment Variables
+//Loading Environment Variables, Libraries
 require('dotenv').config()
+const bodyParser = require('body-parser')
+const GracefulShutdownManager = require('@moebius/http-graceful-shutdown').GracefulShutdownManager;
+const Routes = require('./controller/Routes/indexRouter');
+const Express = require('express')
 
-//Creating App
-const App = require('express')()
+//Creating App and Settings
+const App = Express()
+App.set('views',__dirname + "/view")
+Express.static('./model/static', )
 
 //Middleware
+App.use(bodyParser.urlencoded({extended:false}))
+App.use(bodyParser.json())
 
 //Routes
-App.get('/ping', (req, res) => {
-  res.json({ status: 'optimal' })
-})
+App.use(Routes)
 
 //Error Handler
 App.use((err,req,res,next) => {
@@ -24,6 +30,7 @@ App.use((err,req,res,next) => {
 
 //Starting Server
 const PORT = process.env.PORT || 8080
-App.listen(PORT, () => {
+const server = App.listen(PORT, () => {
   console.log(`Server Online on port ${PORT}`)
 })
+const shutdownManager = new GracefulShutdownManager(server);
