@@ -73,7 +73,7 @@ This codebase holds the WIP code for the website:)
   <summary>.env file format</summary>
   When running this code, a ".env" file is needed in the root directory, alternatively these variables can be defined in the environment variables
 
-  ```env
+  ```txt
   PORT=<Port>
   ADMIN_PASS=<Password to be used by admin for creating posts, etc.>
   DATABASE_URL="<link to Postgresql database using postgresql:// protocol, refer to prisma docs>"
