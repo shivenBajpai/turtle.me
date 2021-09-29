@@ -1,7 +1,6 @@
 //Loading Environment Variables, Libraries
 require('dotenv').config()
 const GracefulShutdownManager = require('@moebius/http-graceful-shutdown').GracefulShutdownManager;
-const shutdownManager = new GracefulShutdownManager(server);
 
 //Creating App
 const App = require('express')()
@@ -30,15 +29,3 @@ const server = App.listen(PORT, () => {
   console.log(`Server Online on port ${PORT}`)
 })
 const shutdownManager = new GracefulShutdownManager(server);
-
-//Server Shutdown Code
-shutDown = function() {
-  shutdownManager.terminate(() => {
-    console.log('Server is gracefully terminated');
-  });
-  await prisma.$disconnect()
-  console.log('Closed connection to database');
-  process.exit(0)
-}
-process.on('SIGTERM', shutDown());
-process.on('SIGINT', shutDown());

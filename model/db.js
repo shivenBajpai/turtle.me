@@ -3,8 +3,8 @@ const prisma = new PrismaClient()
 
 module.exports.PrismaClient = prisma
 
-module.exports.createPost = async function(data) {
+module.exports.createPost = async function (data) {
   await prisma.post.create({
-    data
+    data,
   })
 }
