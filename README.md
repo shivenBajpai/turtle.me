@@ -14,26 +14,32 @@ This codebase holds the WIP code for the website:)
   / => redirects to /blog
 
   /blog => Blog feed
+
   /blog/:postid: => Specifc post
 
   /admin => Admin page, login required, creds stored in env vars
-  /admin/createPost => For posting a post
+
+  /admin/createpost => For posting a post
 
   /newsletter => newsletter signups (optouts will be in newsletters themselves)
 
   /tutles => Easter egg maybe
+
   Simple 404 page
 
   <b>API Routes- /techtutle will be the root API route </b>
 
   /newsletter/signup(String: Email) => Add email to newsletter mailing list
+
   /newsletter/signout(String: Email) => Remove email from newsletter mailing list
 
-  /blog() => List of IDs of Recent posts.
-  /post(Array of IDs) => Full post information.
+  /blog => List 5 Recent posts.
+
+  /blog/:id => Full post information.
+
+  /latest => id of the latest blog post
 
   /admin/createPost(Object: Data) => Self Explanatory
-  /admin/verify(String: Password) => admin login
 
 
   ## STAGE II:
@@ -43,17 +49,35 @@ This codebase holds the WIP code for the website:)
   <b>Page Routes-</b>
 
   / => Bootiful Landing Page (change)
+
   /sheetmusic => Sheet music catalogue
+
   /sheetmusic/:sheetid: => Particular sheet music
+
   /admin/addSheet => For Uploading Sheet
 
   <b>API routes</b>
 
   /sheetmusiclist() => List of IDs of Sheet Music.
+  
   /sheetmusic(Array of IDs) => Sheet Music data 
+
 
   ## STAGE III
 
   Auth, User comments etc, unplanned.
     
+</details>
+
+<details> 
+  <summary>.env file format</summary>
+  When running this code, a ".env" file is needed in the root directory, alternatively these variables can be defined in the environment variables
+
+  ```txt
+  PORT=<Port>
+  ADMIN_PASS=<Password to be used by admin for creating posts, etc.>
+  DATABASE_URL="<link to Postgresql database using postgresql:// protocol, refer to prisma docs>"
+  ```
+
+
 </details>
