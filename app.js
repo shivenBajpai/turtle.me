@@ -8,7 +8,7 @@ const Express = require('express')
 //Creating App and Settings
 const App = Express()
 App.set('views',__dirname + "/view")
-Express.static('./model/static', )
+App.use(Express.static('./view'))
 
 //Middleware
 App.use(bodyParser.urlencoded({extended:false}))

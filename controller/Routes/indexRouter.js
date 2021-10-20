@@ -1,31 +1,18 @@
 const Router = require('express').Router();
-const blogRouter = require('./pageRoutes/blogRouter')
-const miscRouter = require('./pageRoutes/miscRouter')
-const adminRouter = require('./pageRoutes/adminRouter')
 const blogAPI = require('./apiRoutes/blogAPI')
 const newsletterAPI = require('./apiRoutes/newsletterAPI')
 const adminAPI = require('./apiRoutes/adminAPI')
+const path = require('path');
 
-//Webpage routes
-Router.use(blogRouter);
-Router.use(miscRouter);
-Router.use(adminRouter);
+//Send Single-Page-Web-App to all get requests for vue-router to handle
+Router.get('*',(req,res) => {
+  res.sendFile(path.join(__dirname, '../../view', 'index.html'));
+})
 
 //API routes
 Router.use('/techtutles',blogAPI);
 Router.use('/techtutles',newsletterAPI);
 Router.use('/techtutles',adminAPI);
-
-//404 Page 
-Router.get('*',(req,res) => {
-  res.status(404);
-
-  // respond with html page
-  if (req.accepts('html')) {
-    res.sendFile('D:\\Shiven_stuff\\Node.js\\turtle.me\\view\\404.html');
-    return;
-  }
-})
 
 Router.post('*',(req,res) => {
   // respond with json
